@@ -1,6 +1,8 @@
 package geometry;
 public class Quadrangle {
-	Point[] points = new Point[4];
+	
+
+Point[] points = new Point[4];
 	double[] sides = new double[4];
 	
 	
@@ -120,6 +122,5 @@ public class Quadrangle {
 		Triangle otherTriangle2 = new Triangle(otherPoints[0], otherPoints[2], otherPoints[3]);
 		return triangle1.equal(otherTriangle1) && triangle2.equal(otherTriangle2);
 }
-
 
 }

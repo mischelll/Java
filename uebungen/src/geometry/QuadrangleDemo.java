@@ -3,10 +3,10 @@ public class QuadrangleDemo {
 
 	public static void main(String[] args) {
 		Quadrangle q1 = new Quadrangle();
-		Point point1= new Point(3,2);
-		Point point2= new Point(9,3);
-		Point point3= new Point(4,8);
-		Point point4= new Point(6,4);
+		Point point1= new Point(2,2);
+		Point point2= new Point(8,1);
+		Point point3= new Point(6,8);
+		Point point4= new Point(3,6);
 		Quadrangle q2 = new Quadrangle(point1, point2, point3, point4);
 		
 		Point[] points = {new Point(2,2) , new Point(13,2) , new Point(8,6) , new Point(4,6) }; 
