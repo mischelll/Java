@@ -1,5 +1,5 @@
 package geometry;
-
+import javafx.scene.shape.Shape;
 public class Rectangle extends GeometricObject {
 	
 	private double height;
@@ -58,7 +58,6 @@ public class Rectangle extends GeometricObject {
 	public double calculateArea() {
 		return height*width;
 	}
-
 	@Override
 	public String getType() {
 		return (height == width)? "Quadrat" : "Rechteck";
@@ -70,7 +69,7 @@ public class Rectangle extends GeometricObject {
 	
 	
 	@Override
-	public boolean equal(Rectangle otherRectangle) {
+	public boolean equal(GeometricObject otherGeometricObject) {
 		if(otherGeometricObject instanceof Rectangle) {
 			Rectangle otherRectangle = (Rectangle) otherGeometricObject;
 			boolean sameHeight = Help.equal(height, otherRectangle.height);
@@ -84,6 +83,15 @@ public class Rectangle extends GeometricObject {
 		}
 		
 	}
+	
+	@Override
+	public boolean contains(double x, double y) {
+		boolean xInside= points[0].x < x && x < (points[0].x+ width);
+		boolean yInside= points[0].y < y && y< (points[0].y + height);
+		return xInside && yInside;
+	}
+	
+	
 	
 	
 }

@@ -1,4 +1,6 @@
 package geometry;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Shape;
 
 public class Triangle extends GeometricObject {
 	
@@ -13,7 +15,7 @@ public class Triangle extends GeometricObject {
 	}
 	
 	public Triangle(Point point1, Point point2, Point point3) {
-		uper("Triangle",3, 3);
+		super("Triangle",3, 3);
 		points[0] = new Point(point1);
 		points[1] = new Point(point2);
 		points[2] = new Point(point3);
@@ -21,7 +23,7 @@ public class Triangle extends GeometricObject {
 	}
 	
 	public Triangle(Triangle otherTriangle) {
-		uper("Triangle",3, 3);
+		super("Triangle",3, 3);
 		points[0] = new Point(otherTriangle.points[0]);
 		points[1] = new Point(otherTriangle.points[1]);
 		points[2] = new Point(otherTriangle.points[2]);
@@ -43,7 +45,7 @@ public class Triangle extends GeometricObject {
 	}
 	
 	@Override
-	private void calculateSides() {
+	public void calculateSides() {
 		sides[0] = Help.calculateDistance(points[0], points[1]);
 		sides[1] = Help.calculateDistance(points[1], points[2]);
 		sides[2] = Help.calculateDistance(points[2], points[0]);
@@ -70,7 +72,7 @@ public class Triangle extends GeometricObject {
 		 double p=(sides[0] + sides[1] + sides[2])/2;
 		return Math.sqrt(p*(p-sides[0])*(p-sides[1])*(p-sides[2]));
 	}
-	@Override
+	
 	public double getMaxAngle() {
 		double alpha = Help.calculateAngle(sides[0], sides[2], sides[1]);
 		double beta = Help.calculateAngle(sides[0], sides[1], sides[2]);
@@ -115,6 +117,17 @@ public class Triangle extends GeometricObject {
 		return false;
 		
 	}
+	
+	@Override
+	public boolean contains(double x, double y) {
+		Point clickPoint = new Point(x,y);
+		Triangle triangle1 = new Triangle(points[0], points[1], clickPoint);
+		Triangle triangle2 = new Triangle(points[1], points[2], clickPoint);
+		Triangle triangle3 = new Triangle(points[2], points[0], clickPoint);
+		
+		double areaSum1 = triangle1.calculateArea() + triangle2.calculateArea()+triangle3.calculateArea();
+		return Help.equal(areaSum1, calculateArea());
+		}
 	
 	
 }

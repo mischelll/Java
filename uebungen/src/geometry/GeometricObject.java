@@ -1,4 +1,4 @@
-import com.sun.javafx.scene.paint.GradientUtils.Point;
+package geometry;
 
 public abstract class GeometricObject implements GeometricDrawing{
 
@@ -16,12 +16,12 @@ public abstract class GeometricObject implements GeometricDrawing{
 	public abstract void initialize();
 	public abstract double calculatePerimeter();
 	public abstract double calculateArea();
-	public abstract String gerType();
+	public abstract String getType();
 	public abstract String toString();
-	public abstract boolean(GeometricObject otherGeometricObject);
+	public abstract boolean equal(GeometricObject otherGeometricObject);
 	
 	public void print() {
-		System.out.println("%s: %s, %s, %s, U = %s, F = %s\n" , name, this, getType(), calculatePerimeter(),
+		System.out.format("%s: %s, %s, %s, U = %s, F = %s\n" , name, this, getType(), calculatePerimeter(),
 				calculateArea());
 	}
 	
