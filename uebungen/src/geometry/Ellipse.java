@@ -92,11 +92,11 @@ public class Ellipse extends GeometricObject{
 	
 	@Override
 	public boolean contains(double x, double y) {
-		Point clickPoint= new Point(x,y);
+		
 		double xCenter= points[0].x+a;
 		double yCenter= points[0].y+b;
-		double result= (Math.pow(x- xCenter, 2)/ (a*a))+ (Math.pow(y-yCenter, 2)/ (b*b));
-		return result <=1;
+		double result= (Math.pow(x- xCenter, 2)/ (a*a)) + (Math.pow(y-yCenter, 2)/ (b*b));
+		return result <= 1;
 		
 		
 		

@@ -24,7 +24,7 @@ public class Help {
 	}
 	
 	public static double calculateAngle(double b, double c, double a) {
-		double sum=(b*b+c*c-a*a)/(2*b*c);
+		double sum = (b*b+c*c-a*a) / (2*b*c);
 		return Math.acos(sum);
 	}
 	

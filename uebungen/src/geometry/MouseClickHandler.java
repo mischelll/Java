@@ -34,13 +34,13 @@ public class MouseClickHandler implements EventHandler<MouseEvent> {
 		double clickY = event.getY() / scale;
 		for(int index = 0; index < drawings.length; index++) {
 			GeometricObject drawing = drawings[index];
-			if(drawing.contains(clickY, clickY)) {
+			if(drawing.contains(clickX, clickY)) {
 				String name = drawing.name;
 				String perimeter = "U = " + drawing.calculatePerimeter();
 				String area = "F = " + drawing.calculateArea();
 				String information = String.join("\n",name, perimeter, area);
 				informationLabel.setText(information);
-				shapes[index].setFill(Color.LIGHTSEAGREEN);
+				shapes[index].setFill(Color.YELLOW);
 				break;
 			}
 		}

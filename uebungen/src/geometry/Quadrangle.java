@@ -158,7 +158,7 @@ Point[] points = new Point[4];
 		Triangle triangle4= new Triangle(points[3], points[0], clickPoint);
 		double areaSum1= triangle1.calculateArea() + triangle2.calculateArea();
 		double areaSum2= triangle3.calculateArea()+ triangle4.calculateArea();
-		return Help.equal(areaSum1+areaSum2, calculateArea());
+		return Help.equal(areaSum1 + areaSum2, calculateArea());
 		}
 
 }

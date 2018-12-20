@@ -26,8 +26,8 @@ public class DesktopApplication extends Application {
 	
 	
 	public void start(Stage primaryStage) {
-		GeometricObject[] drawings = new GeometricObject[10];
-		drawings[0] = new Rectangle(new Point(1,0), 1.5,2);
+		GeometricObject[] drawings = new GeometricObject[1];
+		/*drawings[0] = new Rectangle(new Point(1,0), 1.5,2);
 		drawings[1] = new Rectangle(new Point(3,3), 2, 1);
 		drawings[2] = new Rectangle(new Point(0,5), 1.5, 2.5);
 		
@@ -37,10 +37,12 @@ public class DesktopApplication extends Application {
 		drawings[6] = new Quadrangle(new Point(4,1.5), new Point(6.5,1.5), new Point(5.5,3), new Point(5,3));
 		drawings[7]= new Ellipse(new Point(0.5,3), 1, 1);
 		drawings[8]= new Ellipse(new Point(4,3), 1, 1);
-		drawings[9]= new Ellipse(new Point(3,5), 2, 1);
+		drawings[9]= new Ellipse(new Point(3,5), 2, 1); */
+		drawings[0] =  new Rhomboid(new Point(6,6) , 3,3);
+		
 		
 
-		Shape[] shapes= new Shape[10];
+		Shape[] shapes= new Shape[1];
 		for(int index=0; index<shapes.length;index++) {
 			Shape shape= drawings[index].createShape(SCALE);
 			shape.setStroke(Color.BLACK);
